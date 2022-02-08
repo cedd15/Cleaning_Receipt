@@ -106,31 +106,42 @@ green&white;,;09/15/17,   Gail Phelps   ;,;$30.52
 ;,;   $22.66   ;,; green&white&blue;,;09/15/17"""
 
 #------------------------------------------------
-# Start coding below!
+            # CLEANING PROCESS
 
 #Step1. I replace these characters ";,;" with "|" to clean later. 
 #It will make senses in Step3
 daily_sales_replaced = daily_sales.replace(';,;', '|')
-print(daily_sales_replaced)
-print('\n')
 
-#Step2
+# print(daily_sales_replaced)
+# print('\n')
+
+#Step2. Splitting by commas
 daily_transaction = daily_sales_replaced.split(',')
-print(daily_transaction)
-print('\n')
 
-#Step3
+# print(daily_transaction)
+# print('\n')
+
+#Step3. Removing the character I placed in Step1
 daily_transactions_split = []
 for item in daily_transaction:
   daily_transactions_split.append(item.split('|'))
-print(daily_transactions_split)
 
-#Step4
+# print(daily_transactions_split)
+# print("\n")
+
+#Step4. Final cleaning process
 transactions_clean = []
 for sht in daily_transactions_split:
-  for sck in sht:
-    transactions_clean.append(sck.strip())
-print("\n")
-print(transactions_clean)
+    #this is where I will temporarily place the inner list
+  temporary_list = []
+  for index in range(len(sht)):
+      #removing white space of each element in the temporary_list
+    temporary_list.append(sht[index].strip())
+    #finally, appending the temporary_list to transactions_clean so it will be a clean 2D list
+  transactions_clean.append(temporary_list)
+
+# print(transactions_clean)
+# print("\n")
+
 
 
