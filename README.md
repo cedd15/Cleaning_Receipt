@@ -1,5 +1,5 @@
 ﻿# Cleaning Receipt
-I created this project to test my skills in Python Strings by making the following receipt readable for us, humans.
+I created this project to test my skills in Python Strings by cleaning the following receipt so we can calculate the total sales and count the items sold.
 ```
 """Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
 09/15/17   ,Herbert Tran   ;,;   $7.29;,; 
