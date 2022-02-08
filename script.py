@@ -144,4 +144,29 @@ for sht in daily_transactions_split:
 # print("\n")
 
 
+      # Recording lists of customers, sales and threads sold.
+customers = []
+sales = []
+thread_sold = []
+#
+for eachItem in transactions_clean:
+  customers.append(eachItem[0]) # [0] index means customer's name
+  sales.append(eachItem[1]) # [1] index is the sale from each customer
+  thread_sold.append(eachItem[2]) # [2] index is the threads sold
+
+# print(customers)
+# print("\n")
+# print(sales)
+# print("\n")
+# print(thread_sold)
+# print("\n") 
+
+
+    # Determine the total value of the days sales
+total_sales = 0
+for sale in sales:
+  total_sales += float(sale.strip("$"))
+
+# print(round(total_sales, 2))
+# print("\n")
 
