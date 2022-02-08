@@ -170,3 +170,33 @@ for sale in sales:
 # print(round(total_sales, 2))
 # print("\n")
 
+
+
+        #How much thread of any specific color was sold
+thread_sold_split = []
+
+for thread in thread_sold:
+  #Find single color
+  if thread.find("&") == -1:
+    thread_sold_split.append(thread)
+  else:
+    #Find multiple colors, split them then append to thread_sold_split list
+    multiple_color = thread.split('&')
+    for color in multiple_color:
+      thread_sold_split.append(color)
+
+# print(thread_sold_split)
+# print("\n")
+
+#List of thread colors that we sell
+colors = ['red','yellow','green','white','black','blue','purple']
+
+#Count the number of threads sold for each color
+def color_count(color):
+  count = 0
+  for eachColor in thread_sold_split:
+    if eachColor == color:
+      count += 1
+  return "Thread Shed sold {} threads of {} thread today.".format(count, color)
+
+print(color_count(colors[0]))
